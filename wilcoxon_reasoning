@@ -1,0 +1,30 @@
+The data is not normally distributed: If the data does not follow a normal distribution, then the Wilcoxon rank sum test can be used to compare the medians of two groups without making any assumptions about the underlying distribution.
+
+The sample sizes are small: When the sample sizes are small, the t-test may not be appropriate due to violations of the normality assumption. In this case, the Wilcoxon rank sum test can be used as an alternative.
+
+The variances of the two groups are not equal: When the variances of the two groups are not equal, the t-test may not be appropriate. The Wilcoxon rank sum test is not affected by differences in variance between the two groups.
+
+Outliers and extreme values: The Wilcoxon rank sum test is less sensitive to outliers and extreme values than the t-test, making it a better choice when there are concerns about these types of values.
+
+--------------------------------------------------------------------------
+This output is from an F-test used to compare the variances of two independent groups. In this case, the two groups are defined by the prices of Intel and AMD processors.
+
+The F-statistic is reported as 0.69793, with a corresponding p-value of 3.153e-07. The F-statistic is the ratio of the variances of the two groups, and the p-value indicates the strength of evidence against the null hypothesis of equal variances. The null hypothesis is that the true ratio of variances is equal to 1, which means that the variances of the two groups are equal. Since the p-value is less than the conventional significance level of 0.05, we reject the null hypothesis and conclude that the variances of the two groups are significantly different.
+
+The alternative hypothesis is that the true ratio of variances is not equal to 1, which means that the variances of the two groups are different. This is supported by the small p-value and the F-statistic, which is less than 1, indicating that the variance of the first group (Intel) is smaller than the variance of the second group (AMD).
+
+The 95% confidence interval for the true ratio of variances is calculated to be between 0.6042744 and 0.8023609. This means that we can be 95% confident that the true ratio of variances lies somewhere between these two values.
+
+The sample estimate for the ratio of variances is reported as 0.6979276, which confirms the finding that the variance of the Intel group is smaller than the variance of the AMD group.
+
+Overall, the F-test is a useful statistical test for comparing the variances of two independent groups. It allows us to determine if the difference in variances is statistically significant and provides information about the relative sizes of the variances of the two groups.
+------------------------------------------------------------------------
+The impact of potential outliers on the data and testing of hypothesis depends on several factors, including the sample size, the context of the analysis, and the research question of interest.
+
+In general, a percentage of potential outliers less than 10% is often considered acceptable and may not significantly impact the results of statistical analyses. However, this is not a hard and fast rule, and the impact of outliers on the analysis should be carefully considered in the context of the research question and the specific statistical analysis being conducted.
+
+If the percentage of potential outliers is between 10-20%, this may indicate a moderately influential effect on the data, and may require further investigation or handling of the outliers before conducting statistical analyses.
+
+If the percentage of potential outliers is greater than 20%, this may indicate a significant impact on the data, and may require more careful consideration of how to handle the outliers before conducting statistical analyses.
+
+Overall, the impact of potential outliers on the data and testing of hypothesis depends on the specific context and analysis being conducted, and should be carefully considered before making any decisions regarding handling or removal of the outliers. It is important to carefully consider the research question of interest and the potential impact of the outliers on the conclusions drawn from the analysis.

@@ -1,0 +1,5 @@
+The output shows the results of a linear regression analysis that tests the relationship between the cpuMark benchmark score and the TDP of the CPUs in the dataset.
+
+The intercept of 52.80 suggests that a CPU with a cpuMark score of 0 would have a TDP of approximately 53 watts. The coefficient of cpuMark is 0.002882, which indicates that for every one unit increase in cpuMark, the TDP increases by 0.002882 watts.
+
+The p-value associated with the cpuMark coefficient is very low, indicating that the relationship between cpuMark and TDP is statistically significant. The adjusted R-squared value of 0.4476 indicates that the model explains approximately 44.76% of the variability in TDP, which suggests that other factors beyond just the cpuMark score may also be influencing TDP.

@@ -1,0 +1,5 @@
+Based on the output of the regression analysis, the model shows that there is a statistically significant relationship between the cpuMark score, price, and powerPerf value. The coefficient for cpuMark is positive and significant, indicating that as cpuMark increases, so does powerPerf. The coefficient for price is negative and significant, indicating that as price decreases, powerPerf increases.
+
+However, the adjusted R-squared value of 0.3096 suggests that the model only explains about 31% of the variability in powerPerf scores. This indicates that there may be other factors beyond just cpuMark score and price that are influencing powerPerf values.
+
+Therefore, while the model shows some evidence for the second hypothesis, it is not a comprehensive explanation and further investigation may be necessary to identify other factors that could be affecting powerPerf values.

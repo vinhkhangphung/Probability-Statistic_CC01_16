@@ -1,0 +1,51 @@
+This is the output of a linear regression model in R that has been fit to the data.
+
+The model formula is cpuMark ~ cores, which means we are modeling cpuMark as a linear function of cores. The lm() function is used to fit the linear regression model to the clean_data dataframe.
+
+The output provides several pieces of information:
+
+The Coefficients table shows the estimated regression coefficients for the intercept and the cores predictor variable. The estimated coefficient for cores is 1470.23, which means that the expected increase in cpuMark for every one additional core is 1470.23.
+
+The t value and Pr(>|t|) columns in the Coefficients table show the t-statistic and associated p-value for testing whether the regression coefficient is significantly different from zero. The t-statistic is 83.122 and the p-value is less than 2e-16, indicating that the cores predictor variable is highly significant in predicting cpuMark.
+
+The Residual standard error is an estimate of the standard deviation of the errors (i.e., the difference between the actual cpuMark and the predicted cpuMark) in the model. In this case, the residual standard error is 5081.
+
+The Multiple R-squared value is a measure of how well the model fits the data. In this case, the multiple R-squared value is 0.7811, which means that the model explains about 78.11% of the variation in cpuMark.
+
+The Adjusted R-squared value is a modified version of the multiple R-squared value that takes into account the number of predictor variables in the model. In this case, the adjusted R-squared value is 0.781, which is very close to the multiple R-squared value.
+
+The F-statistic and associated p-value in the last line of the output are used to test whether the regression model as a whole is significant. In this case, the F-statistic is 6909 and the p-value is less than 2.2e-16, indicating that the model as a whole is highly significant.
+
+------------------------------------------------------------
+
+Call:
+
+This line shows the call to the lm() function, which specifies the formula and data used in the linear regression analysis.
+Residuals:
+
+These are the differences between the observed values and the predicted values of threadMark. The residuals have a minimum value of -1875.7 and a maximum value of 2547.8.
+Coefficients:
+
+This table shows the estimated regression coefficients, which describe the relationship between threadMark and cores.
+
+The Intercept is the estimated threadMark when the number of cores is 0.
+
+The coefficient for cores (38.58) represents the change in threadMark associated with a one-unit increase in cores.
+
+Both the Intercept and the cores coefficient are statistically significant with p-values < 0.001, which means they are unlikely to have occurred by chance.
+
+Residual standard error:
+
+This value (718.2) represents the average amount that the observed values of threadMark deviate from the predicted values, in the units of the response variable (threadMark).
+Multiple R-squared:
+
+This value (0.1095) represents the proportion of variance in threadMark that is explained by the number of cores.
+Adjusted R-squared:
+
+This value (0.1091) is similar to the multiple R-squared value, but it takes into account the number of predictors in the model.
+F-statistic:
+
+This statistic (238.2) represents the ratio of the variability between the model and the variability within the model. A higher value indicates that the model explains a significant amount of variance in the response variable.
+p-value:
+
+This value (< 2.2e-16) represents the probability of observing an F-statistic as extreme as the one computed, assuming the null hypothesis is true (i.e., there is no relationship between threadMark and cores). The very small p-value indicates strong evidence against the null hypothesis.
