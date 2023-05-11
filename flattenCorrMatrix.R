@@ -1,3 +1,5 @@
+### FUNCTION FILES - ARCHIVED
+
 flattenCorrMatrix <- function(cormat, pmat) {
   ut <- upper.tri(cormat)
   data.frame(

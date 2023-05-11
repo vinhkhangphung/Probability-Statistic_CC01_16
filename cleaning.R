@@ -1,43 +1,33 @@
 library(mice)
-library("Hmisc")
-library(corrplot)
-library("PerformanceAnalytics")
-source("flattenCorrMatrix.R")
-library("Kendall")
 getwd()
+
 
 raw_data <- read.csv("CPU_benchmark_v4.csv", header = TRUE)
 
-md.pattern(raw_data)
+missing_data <- md.pattern(raw_data)
 
 clean_data <- na.omit(raw_data)
+clean_data$powerPerf <- as.numeric(clean_data$powerPerf)
 
-mtrx_data <- subset(clean_data, select=-c(cpuName, socket, category, testDate))
-corr_matrix <- co_mat2 <- rcorr(as.matrix(mtrx_data))
+# Identify duplicate observations
+duplicates <- clean_data[duplicated(clean_data),]
 
-corrplot(corr_matrix$r, type = "upper", order = "hclust", 
-         tl.col = "black", tl.srt = 45)
+# Print the number of duplicate observations
+cat("Number of duplicate observations: ", nrow(duplicates), "\n")
 
-co_mat2$P[is.na(co_mat2$P)] = 0
-tmp <- flattenCorrMatrix(co_mat2$r, co_mat2$P)
+# Select the variables to normalize
+vars_to_normalize <- c("price", "cpuMark", "cpuValue", "threadMark", 
+                       "threadValue", "TDP", "powerPerf", "cores")
 
-corrplot(co_mat2$r, type="upper", order="hclust",
-         p.mat = co_mat2$P, sig.level = 0.01
-         , tl.col = "black", tl.srt = 45)
+# Normalize the selected variables
+normalized_data <- as.data.frame(scale(clean_data[, vars_to_normalize]))
 
-numeric_draw_data <- lapply(mtrx_data, as.numeric)
-# numeric_draw_data <- do.call("rbind", numeric_draw_data)
-# numeric_draw_data <- numeric_draw_data[complete.cases(numeric_draw_data),]
-# numeric_draw_data <- t(numeric_draw_data)
-# chart.Correlation(numeric_draw_data, histogram=TRUE, pch=19)
+# Combine the normalized variables with the non-normalized variables
+final_data <- cbind(clean_data[, !(names(clean_data) %in% vars_to_normalize)], 
+                    normalized_data)
 
-# First, convert the data to ranks using the rank() function
-ranked_data <- lapply(numeric_draw_data, rank)
-
-# Calculate the Spearman's rank correlation coefficient and its p-value
-cor_test <- cor.test(ranked_data$cpuValue, ranked_data$cpuMark, method="kendall")
-print(cor_test)
+# Drop columns (socket, category, testDate)
+final_data <- final_data[, !(names(final_data) %in% c("socket", 
+                                                      "testDate", "category"))]
 
 
-
-# print(head(clean_data))
