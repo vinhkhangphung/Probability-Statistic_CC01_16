@@ -2,7 +2,6 @@
 intel_df <- clean_data[grepl("Intel", clean_data$cpuName),]
 amd_df <- clean_data[grepl("AMD", clean_data$cpuName),]
 
-var.test(intel_df$price, amd_df$price)
-
 # Perform Wilcoxon rank-sum test
-wilcox.test(intel_df$price, amd_df$price)
+wilcox.test(amd_df$cpuValue, intel_df$cpuValue, "greater")
+wilcox.test(amd_df$powerPerf, intel_df$powerPerf, "greater")
