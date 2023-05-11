@@ -1,5 +1,3 @@
-# Probability-Statistic_CC01_16
-code base for the team project
 # Project README
 
 ## Dataset Cleaning Instructions
@@ -30,7 +28,7 @@ Please refer to the specific files for more details and comments within the code
 ## Dependencies
 
 The following dependencies are required to run the code in this project:
-- R (version X.X.X)
+- R (version 4.2.3)
 - "package:exactRankTests" 
 - "package:coin"           
 - "package:survival"      
